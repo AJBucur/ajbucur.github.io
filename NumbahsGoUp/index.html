@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>NUMBAHS GO UPPPP!!! </title>
+  
+</head>
+
+<body>
+  <p>Numbahs: <label id="number"></label></p>
+  <!-- Project -->
+  
+  <button onclick="numGoUp()">MOAR!</button>
+  
+  <button id="power" onclick="powGoUp()">POWAH!</button>
+  
+  <script>
+    var ultimateNum = 0;
+    var ultimatePow = 1;
+    
+    document.getElementById("number").innetHTML = ultimateNum;
+    document.getElementById("power").style.visibility = "hidden";
+    
+    var isPowerUnlocked = false;
+    
+    function numGoUp() {
+      ultimateNum += ultimatePow;
+      document.getElementById("number").innerText = ultimateNum;
+      
+      if (ultimateNum >= 50 && !isPowerUnlocked){
+        document.getElementById("power" ).style.visibility = "visible";
+        isPowerUnlocked = true;
+      }
+      else if(ultimateNum >= 50){
+        document.getElementById("power").disabled = false;
+      }
+    }
+    
+    function powGoUp() {
+      ultimatePow++;
+      ultimateNum -= 50;
+      
+      document.getElementById("number").innerText = ultimateNum;
+      
+      if(ultimateNum < 50){
+        document.getElementById("power").disabled = true;
+      }
+    }
+  </script>
+</body>
+</html>
